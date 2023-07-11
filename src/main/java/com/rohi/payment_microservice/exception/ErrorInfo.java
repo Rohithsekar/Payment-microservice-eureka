@@ -16,3 +16,4 @@ public class ErrorInfo {
     private HttpStatusCode httpStatusCode;
     private LocalDateTime timestamp;
 }
+/*change*/

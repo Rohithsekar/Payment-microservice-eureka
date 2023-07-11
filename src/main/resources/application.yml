@@ -34,3 +34,5 @@ eureka:
         hostname : localhost
   instance:
     prefer-ip-address: true
+
+#change
