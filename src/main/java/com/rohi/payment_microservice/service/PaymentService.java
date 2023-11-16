@@ -3,12 +3,14 @@ package com.rohi.payment_microservice.service;
 import com.rohi.payment_microservice.exception.PaymentFailureException;
 import com.rohi.payment_microservice.model.Payment;
 import com.rohi.payment_microservice.repository.PaymentRepository;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 import java.util.UUID;
 
 @Service
+@RefreshScope
 public class PaymentService {
 
     /*
@@ -42,6 +44,8 @@ the use of constructor injection as the default option but also supports other i
      */
     private final PaymentRepository repository;
 
+
+
     //constructor injection
     public PaymentService(PaymentRepository repository){
         this.repository = repository;
@@ -73,5 +77,9 @@ the use of constructor injection as the default option but also supports other i
     }
 
 
+    public Payment findPaymentByOrderId(int orderId) {
+        return repository.findByOrderId(orderId);
+
+    }
 }
 /*change*/
